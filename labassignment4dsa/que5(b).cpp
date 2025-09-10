@@ -14,14 +14,14 @@ public:
     }
     void pop() {
         if (q.empty()) {
-            cout <<"Stack is empty\n";
+            cout <<"Stack is empty"<<endl;
             return;
         }
         q.pop();
     }
     int top() {
         if (q.empty()) {
-            cout <<"Stack is empty\n";
+            cout<<"Stack is empty"<<endl;
             return -1;
         }
         return q.front();
@@ -35,8 +35,8 @@ int main() {
     s.push(10);
     s.push(20);
     s.push(30);
-    cout <<"Top: " << s.top()<< endl; 
+    cout <<"Top:"<<s.top()<<endl; 
     s.pop();
-    cout <<"Top after pop: "<<s.top() << endl; 
+    cout<<"Top after pop:"<<s.top()<<endl; 
     return 0;
 }
