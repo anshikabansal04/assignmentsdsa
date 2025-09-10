@@ -19,7 +19,7 @@ public:
     {
         if (q1.empty())
         {
-            cout <<"Stack is empty\n";
+            cout <<"Stack is empty";
             return;
         }
         q1.pop();
@@ -28,7 +28,7 @@ public:
     {
         if (q1.empty())
         {
-            cout <<"Stack is empty\n";
+            cout <<"Stack is empty";
             return -1;
         }
         return q1.front();
@@ -45,8 +45,8 @@ int main()
     s.push(10);
     s.push(20);
     s.push(30);
-    cout << "Top:" << s.top() << endl;
+    cout<<"Top:"<< s.top()<<endl;
     s.pop();
-    cout << "Top after pop:" << s.top() << endl;
+    cout<<"Top after pop:"<<s.top()<<endl;
     return 0;
 }
