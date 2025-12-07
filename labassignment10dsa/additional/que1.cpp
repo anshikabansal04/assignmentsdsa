@@ -1,23 +1,34 @@
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <limits.h>
+#define MAX 1000
 using namespace std;
-int main(){
-unordered_map<int,int>freq;
-int arr[] = {1, 2, 3, 1, 2, 1};
-int n = 6;
-for(int i=0;i<n;i++){
-    freq[arr[i]]=freq[arr[i]]+1;
-}
-unordered_map<int,int>::iterator it;
-int count;
-for(it=freq.begin();it!=freq.end();it++){
-  int key=it->first;
-  count=it->second;
-  int max=INT_MIN;
-  if(count>max){
-   count=max;
+void maxFrequency(int arr[], int n)
+{
+  int hash[MAX] = {0}; // key = element, value = count
+  int maxcount = INT_MIN, maxvalue = INT_MIN;
+  for (int i = 0; i < n; i++)
+    hash[arr[i]]++;
+  for (int i = 0; i < MAX; i++)
+  {
+    if (hash[i] >= maxcount)
+    {
+      maxcount = hash[i];
+      maxvalue = i;
+    }
+    else if (hash[i] == maxcount)
+    {
+      if (i > maxvalue)
+      {
+        maxvalue = i;
+      }
+    }
   }
+  cout << "Maximum frequency element is " << maxvalue << endl;
 }
-cout<<"count is"<<count<<endl;
-return 0;
+int main()
+{
+  int arr[] = {2, 3, 4, 3, 2};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  maxFrequency(arr, n);
+  return 0;
 }
